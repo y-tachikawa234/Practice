@@ -32,7 +32,6 @@ public class DentakuMain{
 		}
 		// 演算子以外の場合エラーメッセージを出力
 		ope = scan.next();
-		//ope = scan.next();
 		if (!ADD_OPERATORBUTTON.equals(ope) && !SUB_OPERATORBUTTON.equals(ope) && !MUL_OPERATORBUTTON.equals(ope)
 				&& !DIV_OPERATORBUTTON.equals(ope)) {
 			System.out.println("2つ目の値には演算子(+,-,*,/)のいずれかを入力してください。");
