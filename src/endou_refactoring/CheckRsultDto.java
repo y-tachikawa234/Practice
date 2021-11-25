@@ -11,7 +11,7 @@ public class CheckRsultDto {
 	 * エラーフラグ.
 	 */
 	private boolean errFlg;
-	
+
 	/**
 	 * エラーメッセージ.
 	 */

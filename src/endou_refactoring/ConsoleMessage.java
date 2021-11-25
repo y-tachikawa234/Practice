@@ -55,6 +55,7 @@ public class ConsoleMessage {
 	 * 
 	 */
 	public void errorMessage(String msg) {
+		
 		System.out.println(msg);
 	}
 	

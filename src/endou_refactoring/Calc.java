@@ -35,6 +35,7 @@ public class Calc {
 	 * @return 計算結果
 	 */
 	private BigDecimal add(BigDecimal num1, BigDecimal num2) {
+		
 		return toScale(num1.add(num2));
 	}
 	
@@ -46,6 +47,7 @@ public class Calc {
 	 * @return 計算結果
 	 */
 	private BigDecimal subtract(BigDecimal num1, BigDecimal num2) {
+		
 		return toScale(num1.subtract(num2));
 	}
 	
@@ -57,6 +59,7 @@ public class Calc {
 	 * @return 計算結果
 	 */
 	private BigDecimal multiply(BigDecimal num1, BigDecimal num2) {
+		
 		return toScale(num1.multiply(num2));
 	}
 	
@@ -68,6 +71,7 @@ public class Calc {
 	 * @return 計算結果
 	 */
 	private BigDecimal divide(BigDecimal num1, BigDecimal num2) {
+		
 		return toScale(num1.divide(num2));
 	}
 	
