@@ -34,36 +34,34 @@ public class Validation {
 	 */
 	public CheckRsultDto checkInputValue(String num1, String ope, String num2) {
 		
+		CheckRsultDto dto = new CheckRsultDto();
+		
 		if (!isNumeric(num1)) {
 			
-			CheckRsultDto dto = new CheckRsultDto();
 			dto.setErrFlg(true);
 			dto.setErrorMessage(String.format(ERR_INPUT_MESSAGE_NUM, "1"));
 			return dto;
 			
 		} else if (!isNumeric(num2)) {
 			
-			CheckRsultDto dto = new CheckRsultDto();
 			dto.setErrFlg(true);
 			dto.setErrorMessage(String.format(ERR_INPUT_MESSAGE_NUM, "2"));
 			return dto;
 			
 		} else if (isSymbol(ope)) {
 			
-			CheckRsultDto dto = new CheckRsultDto();
 			dto.setErrFlg(true);
 			dto.setErrorMessage(ERR_INPUT_MESSAGE_OPERATOR);
 			return dto;
 			
 		} else if (ZERO.equals(num2) && OperatorConstant.OPERATOR_DIV.equals(ope)) {
 			
-			CheckRsultDto dto = new CheckRsultDto();
 			dto.setErrFlg(true);
 			dto.setErrorMessage(ERR_INPUT_MESSAGE_TRAL_0);
-			
+			return dto;
 		}
 
-		return new CheckRsultDto();
+		return dto;
 	}
 	
 	/**
@@ -75,13 +73,9 @@ public class Validation {
 	private boolean isNumeric(String value) {
 		
 		try {
-			
 			new BigDecimal(value);
-			
 		} catch (NumberFormatException e) {
-			
 			return false;
-			
 		}
 		
 		return true;
