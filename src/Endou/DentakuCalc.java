@@ -4,44 +4,42 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class DentakuCalc {
-	BigDecimal calc(BigDecimal num1, String ope, BigDecimal num2) {
+	public BigDecimal calc(BigDecimal num1, String ope, BigDecimal num2) {
 		// 定数を宣言。
-		final String ADD_OPERATORBUTTON = "+";
-		final String SUB_OPERATORBUTTON = "-";
-		final String MUL_OPERATORBUTTON = "*";
-		final String DIV_OPERATORBUTTON = "/";
+		final String OPERATOR_ADD = "+";
+		final String OPERATOR_SUB = "-";
+		final String OPERATOR_MUL = "*";
+		final String OPERATOR_DIV = "/";
 		// 変数を宣言
-		BigDecimal result = BigDecimal.valueOf(0);
+		BigDecimal result = BigDecimal.ZERO;
 
-		// 計算処理
-		// 計算結果
+		// 入力された演算子に沿って計算を行い結果を返す
 		switch (ope) {
-		case ADD_OPERATORBUTTON:
+		case OPERATOR_ADD:
 			result = num1.add(num2);
-			result = result.setScale(2, RoundingMode.HALF_UP);
-			result = result.stripTrailingZeros();
 			break;
-		case SUB_OPERATORBUTTON:
+		case OPERATOR_SUB:
 			result = num1.subtract(num2);
-			result = result.setScale(2, RoundingMode.HALF_UP);
-			result = result.stripTrailingZeros();
 			break;
-		case MUL_OPERATORBUTTON:
+		case OPERATOR_MUL:
 			result = num1.multiply(num2);
-			result = result.setScale(2, RoundingMode.HALF_UP);
-			result = result.stripTrailingZeros();
 			break;
-		case DIV_OPERATORBUTTON:
+		case OPERATOR_DIV:
 			if (num2.compareTo(BigDecimal.ZERO) == 0) {
 				System.out.println("数値2に0が入力されています。");
 				System.exit(0);
 			} else {
 				result = num1.divide(num2);
-				result = result.setScale(2, RoundingMode.HALF_UP);
-				result = result.stripTrailingZeros();
 				break;
 			}
 		}
 		return result;
+	}
+	
+	public BigDecimal resultValue(BigDecimal result) {
+		BigDecimal resultValue = BigDecimal.ZERO;
+		resultValue =result.setScale(2, RoundingMode.HALF_UP);
+		resultValue = result.stripTrailingZeros();
+		return resultValue;
 	}
 }
