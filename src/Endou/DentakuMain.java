@@ -7,18 +7,17 @@ import java.util.Scanner;
 public class DentakuMain{	
 	public static void main (String[] args) {
 		//メッセージを出力
-		DentakuMessage msg = new DentakuMessage();
-		msg.printMessage();
+		DentakuMessage.printMessage();
 		// 演算子の定数を宣言。
-		final String ADD_OPERATORBUTTON = "+";
-		final String SUB_OPERATORBUTTON = "-";
-		final String MUL_OPERATORBUTTON = "*";
-		final String DIV_OPERATORBUTTON = "/";
+		final String OPERATOR_ADD = "+";
+		final String OPERATOR_SUB = "-";
+		final String OPERATOR_MUL = "*";
+		final String OPERATOR_DIV = "/";
 		// 数値1、演算子、数値2、計算結果の変数を宣言。
-		BigDecimal num1 = BigDecimal.valueOf(0);
+		BigDecimal num1 = BigDecimal.ZERO;
 		String ope = null;
-		BigDecimal num2 = BigDecimal.valueOf(0);
-		BigDecimal result = BigDecimal.valueOf(0);
+		BigDecimal num2 = BigDecimal.ZERO;
+		BigDecimal result = BigDecimal.ZERO;
 		
 		//スキャナークラスの初期化
 		Scanner scan = new Scanner(System.in);
@@ -32,8 +31,8 @@ public class DentakuMain{
 		}
 		// 演算子以外の場合エラーメッセージを出力
 		ope = scan.next();
-		if (!ADD_OPERATORBUTTON.equals(ope) && !SUB_OPERATORBUTTON.equals(ope) && !MUL_OPERATORBUTTON.equals(ope)
-				&& !DIV_OPERATORBUTTON.equals(ope)) {
+		if (!OPERATOR_ADD.equals(ope) && !OPERATOR_SUB.equals(ope) && !OPERATOR_MUL.equals(ope)
+				&& !OPERATOR_DIV.equals(ope)) {
 			System.out.println("2つ目の値には演算子(+,-,*,/)のいずれかを入力してください。");
 			System.exit(0);
 		} else {
@@ -53,6 +52,8 @@ public class DentakuMain{
 		//計算クラスのメソッドで計算を行う
 		DentakuCalc calculation = new DentakuCalc();
 		result = calculation.calc(num1,ope,num2);
+		result = calculation.resultValue(result);
+		
 		//計算結果の出力
 		System.out.println(
 				String.format("計算結果は%s %s %s = %sです。", String.valueOf(num1), ope, String.valueOf(num2), String.valueOf(result)));
