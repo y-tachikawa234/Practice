@@ -29,8 +29,7 @@ public class DentakuCalc {
 				System.out.println("数値2に0が入力されています。");
 				System.exit(0);
 			} else {
-				result = num1.divide(num2);
-				break;
+				result = num1.divide(num2, 2, RoundingMode.HALF_UP);
 			}
 		}
 		return result;
@@ -39,7 +38,7 @@ public class DentakuCalc {
 	public BigDecimal resultValue(BigDecimal result) {
 		BigDecimal resultValue = BigDecimal.ZERO;
 		resultValue =result.setScale(2, RoundingMode.HALF_UP);
-		resultValue = result.stripTrailingZeros();
+		resultValue = resultValue.stripTrailingZeros();
 		return resultValue;
 	}
 }
