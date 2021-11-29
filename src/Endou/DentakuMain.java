@@ -49,7 +49,7 @@ public class DentakuMain{
 		System.out.println("3つ目の値の入力を確認 値：" + num2);
 		scan.close();
 
-		//計算クラスのメソッドで計算を行う
+		//計算クラスのメソッドで計算の処理を行う
 		DentakuCalc calculation = new DentakuCalc();
 		result = calculation.calc(num1,ope,num2);
 		result = calculation.resultValue(result);
