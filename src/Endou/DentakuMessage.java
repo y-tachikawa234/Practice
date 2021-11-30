@@ -24,6 +24,9 @@ public class DentakuMessage {
 		System.out.println("演算子には+,-,*,/が指定できます。");
 		System.out.println("上記以外を設定するとエラーが発生します。");
 		System.out.println(MESSAGE_SPACE);
+		System.out.println(MESSAGE_LINE);
+		System.out.println(MESSAGE_SPACE);
+		System.out.println("値を入力してください。");
 	}
 
 }
